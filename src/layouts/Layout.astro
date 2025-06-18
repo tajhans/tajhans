@@ -12,9 +12,9 @@ const currentPath = Astro.url.pathname;
     <title>{title}</title>
     <ClientRouter />
 </head>
-<body class="min-h-screen grid grid-rows-[auto_1fr_auto] text-4xl leading-relaxed text-stone-900 font-erode">
-<header class="flex justify-between items-start p-10">
-    <h1 class="text-5xl font-erode">Taj Hans</h1>
+<body class="min-h-screen grid grid-rows-[auto_1fr_auto] text-4xl leading-relaxed text-stone-900">
+<header class="flex justify-between items-start p-10" transition:name="main-header" transition:animate="none">
+    <h1 class="text-5xl">Taj Hans</h1>
     <nav>
         <ul class="flex gap-12 text-3xl">
             <li>
