@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const projects = [
+    {
+        title: "nostakes.poker",
+        link: "https://github.com/tajhans/nostakes",
+        date: "May 9, 2025"
+    },
+    {
+        title: "Camber Batteries",
+        link: "https://github.com/tajhans/camber-batteries",
+        date: "March 29, 2025"
+    },
+    {
+        title: "Pathfinder",
+        link: "https://github.com/tajhans/pathfinder",
+        date: "October 24, 2024"
+    },
+];
+---
+
+<Layout>
+    <ul class="divide-y divide-gray-200 space-y-2">
+        {projects.map((project, index) => (
+                <li class="flex justify-between items-center py-4 border-b-2 border-neutral-100" key={index}>
+                    <a href={project.link} class="text-xl hover:underline">
+                        {project.title}
+                    </a>
+                    <p class="text-lg text-neutral-500 whitespace-nowrap">
+                        {project.date}
+                    </p>
+                </li>
+        ))}
+    </ul>
+</Layout>
