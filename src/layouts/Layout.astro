@@ -4,6 +4,9 @@ import { ClientRouter } from "astro:transitions";
 
 const { title = "Taj Hans" } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+const normalizePath = (path) => path.replace(/\/$/, "") || "/";
+const normalizedPath = normalizePath(currentPath);
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -20,7 +23,7 @@ const currentPath = Astro.url.pathname;
             <li>
                 <a
                         href="/"
-                        class={`hover:underline ${currentPath === "/" ? "underline" : ""}`}
+                        class={`hover:underline ${normalizedPath === "/" ? "underline" : ""}`}
                 >
                     about
                 </a>
@@ -28,7 +31,7 @@ const currentPath = Astro.url.pathname;
             <li>
                 <a
                         href="/projects"
-                        class={`hover:underline ${currentPath === "/projects" ? "underline" : ""}`}
+                        class={`hover:underline ${normalizedPath === "/projects" ? "underline" : ""}`}
                 >
                     projects
                 </a>
